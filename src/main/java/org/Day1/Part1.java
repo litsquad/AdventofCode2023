@@ -4,7 +4,7 @@ import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.IOException;
 
-public class Main {
+public class Part1 {
     public static void main(String[] args) {
         BufferedReader reader;
         int sum = 0;
