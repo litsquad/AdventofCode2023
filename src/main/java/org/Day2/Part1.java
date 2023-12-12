@@ -44,8 +44,8 @@ public class Part1 {
 
 
     }
-        //TODO================================================DOESNT DETECT DOUBLE DIGITS:(((((
-    public static int getGameID(String input) { //process input to get the gameID
+
+    public static int getGameID(String input) { //process input to get the gameID //TODO, this doesnt work, only takes one digit
         int gameID;
         char[] lineChars = input.toCharArray();
         gameID = Character.getNumericValue(lineChars[5]);
@@ -76,7 +76,7 @@ public class Part1 {
     public static int getMaxBlue(String input){
         int max = 0;
 
-        Pattern pattern = Pattern.compile("(\\d blue)", Pattern.CASE_INSENSITIVE); //TODO check if the regex to be valid
+        Pattern pattern = Pattern.compile("((\\d)+ blue)", Pattern.CASE_INSENSITIVE);
         Matcher matcher = pattern.matcher(input);
         boolean matchFound = matcher.find();
 
@@ -85,19 +85,23 @@ public class Part1 {
             int start = matcher.start(0);
             int end = matcher.end(0);
             System.out.println("Match is " + input.substring(start, end));
+            String match = input.substring(start, end);
             //get first item (index 0)
-            int numberStr = getNumber(input.substring(start,start+1));
+            //int numberStr = getNumber(input.substring(start,start+1));
+            int numberStr = Integer.parseInt(match.replaceAll("[\\D]", ""));
             max = numberStr;
         }
 
         while (matcher.find()) {
 
-
             int start = matcher.start(0);
             int end = matcher.end(0);
             System.out.println("Match is " + input.substring(start, end));
+            String match = input.substring(start, end);
             //get first item (index 0)
-            int numberStr = getNumber(input.substring(start,start+1));
+            //int numberStr = getNumber(input.substring(start,start+1));
+            int numberStr = Integer.parseInt(match.replaceAll("[\\D]", ""));
+
             if (max < numberStr){
                 max = numberStr;
             }
@@ -109,7 +113,7 @@ public class Part1 {
     public static int getMaxRed(String input){
         int max = 0;
 
-        Pattern pattern = Pattern.compile("(\\d red)", Pattern.CASE_INSENSITIVE); //TODO check if the regex to be valid
+        Pattern pattern = Pattern.compile("((\\d)+ red)", Pattern.CASE_INSENSITIVE);
         Matcher matcher = pattern.matcher(input);
         boolean matchFound = matcher.find();
 
@@ -118,19 +122,23 @@ public class Part1 {
             int start = matcher.start(0);
             int end = matcher.end(0);
             System.out.println("Match is " + input.substring(start, end));
+            String match = input.substring(start, end);
             //get first item (index 0)
-            int numberStr = getNumber(input.substring(start,start+1));
+            //int numberStr = getNumber(input.substring(start,start+1));
+            int numberStr = Integer.parseInt(match.replaceAll("[\\D]", ""));
             max = numberStr;
         }
 
         while (matcher.find()) {
 
-
             int start = matcher.start(0);
             int end = matcher.end(0);
             System.out.println("Match is " + input.substring(start, end));
+            String match = input.substring(start, end);
             //get first item (index 0)
-            int numberStr = getNumber(input.substring(start,start+1));
+            //int numberStr = getNumber(input.substring(start,start+1));
+            int numberStr = Integer.parseInt(match.replaceAll("[\\D]", ""));
+
             if (max < numberStr){
                 max = numberStr;
             }
@@ -143,7 +151,7 @@ public class Part1 {
     public static int getMaxGreen(String input){
         int max = 0;
 
-        Pattern pattern = Pattern.compile("(\\d green)", Pattern.CASE_INSENSITIVE); //TODO check if the regex to be valid
+        Pattern pattern = Pattern.compile("((\\d)+ green)", Pattern.CASE_INSENSITIVE);
         Matcher matcher = pattern.matcher(input);
         boolean matchFound = matcher.find();
 
@@ -152,19 +160,23 @@ public class Part1 {
             int start = matcher.start(0);
             int end = matcher.end(0);
             System.out.println("Match is " + input.substring(start, end));
+            String match = input.substring(start, end);
             //get first item (index 0)
-            int numberStr = getNumber(input.substring(start,start+1));
+            //int numberStr = getNumber(input.substring(start,start+1));
+            int numberStr = Integer.parseInt(match.replaceAll("[\\D]", ""));
             max = numberStr;
         }
 
         while (matcher.find()) {
 
-
             int start = matcher.start(0);
             int end = matcher.end(0);
             System.out.println("Match is " + input.substring(start, end));
+            String match = input.substring(start, end);
             //get first item (index 0)
-            int numberStr = getNumber(input.substring(start,start+1));
+            //int numberStr = getNumber(input.substring(start,start+1));
+            int numberStr = Integer.parseInt(match.replaceAll("[\\D]", ""));
+
             if (max < numberStr){
                 max = numberStr;
             }
@@ -175,12 +187,7 @@ public class Part1 {
         return max;
     }
 
-    public static int getNumber(String input) {
-        int number = Integer.parseInt(input);
 
-        System.out.println(number);
-        return number;
-    }
 }
 
 
