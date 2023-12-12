@@ -1,6 +1,7 @@
 package org.Day2;
 
 import java.io.BufferedReader;
+import java.io.File;
 import java.io.FileReader;
 import java.io.IOException;
 import java.util.regex.Matcher;
@@ -14,12 +15,20 @@ public class Part1 {
     int blueMax = 14;
 
     public static void main(String[] args) {
-        BufferedReader reader;
+
         int sum = 0;
         int currentID;
 
         try {
-            reader = new BufferedReader(new FileReader("C:\\Users\\FramedWurk\\IdeaProjects\\AdventofCode2023\\src\\main\\java\\org\\Day2\\GameText"));
+
+            String filePath = new File("").getAbsolutePath();
+            System.out.println(filePath);
+
+
+
+            BufferedReader reader = new BufferedReader(new FileReader(filePath + "\\src\\main\\java\\org\\Day2\\GameText"));
+
+
             String line = reader.readLine();
 
             while (line != null) {
