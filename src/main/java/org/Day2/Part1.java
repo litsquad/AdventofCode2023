@@ -45,7 +45,7 @@ public class Part1 {
 
     }
 
-    public static int getGameID(String input) { //process input to get the gameID //TODO, this doesnt work, only takes one digit
+    public static int getGameID(String input) { //process input to get the gameID //TODO, this doesnt work, only takes one digit, do a while not " ", get number stuff
         int gameID;
         char[] lineChars = input.toCharArray();
         gameID = Character.getNumericValue(lineChars[5]);
